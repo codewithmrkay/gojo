@@ -1,13 +1,18 @@
-import Navbar from '@/components/Navbar'
+"use client"
+import NightSky from '@/components/NightSky'
+import ProjectPage from '@/components/ProjectPage'
 import React from 'react'
 
-const page = () => {
+const Project = () => {
   return (
-    <div className='font-gojo w-full h-full '>
-        <Navbar/>
-        <h1 className='text-5xl'>Projects</h1>
+    <div className='bg-[#030841]'>
+      <NightSky>
+        <div className='flex flex-col items-center w-full font-gojo'>
+          <ProjectPage />
+        </div>
+      </NightSky>
     </div>
   )
 }
 
-export default page
+export default Project

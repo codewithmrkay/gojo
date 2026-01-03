@@ -3,10 +3,9 @@
 import { SOUNDS } from '@/lib/sound/sound'
 import { soundManager } from '@/lib/sound/SoundManager'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 export default function MuteButton() {
   const [muted, setMuted] = useState(true)
-
   const handleClick = async () => {
     // unlock + preload (safe even if already done)
     await soundManager.unlock()
@@ -27,7 +26,7 @@ export default function MuteButton() {
   return (
     <div
       onClick={handleClick}
-      className={`w-8 h-8 ${muted?"animate-bounce":""} cursor-pointer hover:scale-110 transition-transform`}
+      className={`w-8 h-8 ${muted?"animate-bounce":"animate-pulse"} cursor-pointer hover:scale-110 transition-transform`}
     >
       <Image
         src={muted ? '/images/mute.webp' : '/images/unmute.webp'}
