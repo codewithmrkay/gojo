@@ -16,6 +16,7 @@ const ICON_MAP = {
     mail: Mail,
 };
 
+
 export const ContactList = ({ items = [] }) => {
     return (
         <>
@@ -24,7 +25,7 @@ export const ContactList = ({ items = [] }) => {
                 return (
                     <li
                         key={item.href}
-                        className="p-1 rounded-full relative text-2xl hover:scale-105"
+                        className=" p-1 rounded-full relative text-2xl hover:scale-105"
                         onMouseEnter={() => soundManager.play("hover")}
                     >
                         <Link
@@ -32,7 +33,7 @@ export const ContactList = ({ items = [] }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => soundManager.play("whoosh")}
-                            className="opacity-70 hover:opacity-100 transition"
+                            className="flex items-center gap-1 justify-start opacity-70 hover:opacity-100 transition"
                         >
                             <Icon className="w-7 h-7" />
                         </Link>

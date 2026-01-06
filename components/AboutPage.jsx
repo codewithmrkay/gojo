@@ -61,7 +61,7 @@ const AboutPage = () => {
         <GithubPage />
       </div>
       <div className='w-full mt-5 text-white'>
-        <h1 className='text-2xl md:text-3xl'>Global Contribution</h1>
+        <h1 className='mb-3 text-2xl md:text-3xl'>Global Contribution</h1>
         <GlobalProject />
       </div>
     </div>

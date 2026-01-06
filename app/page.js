@@ -10,6 +10,9 @@ import Image from 'next/image'
 import React from 'react'
 import ProjectPage from '@/components/ProjectPage'
 import AboutPage from '@/components/AboutPage'
+import ContactPage from '@/components/ContactPage'
+import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 const page = () => {
   return (
@@ -26,7 +29,7 @@ const page = () => {
               priority
             />
           </div>
-          <div className='relative z-0 flex h-full w-full px-2 mt-5 md:mt-10 text-white'>
+          <div className='relative z-0 flex h-full w-full px-2 mt-5 md:mt-20 text-white'>
             <div className=' w-full h-full max-w-5xl mx-auto font-gojo'>
               <div className='flex items-center justify-start gap-2 md:gap-4'>
                 {/* hero img + text */}
@@ -85,17 +88,19 @@ const page = () => {
               </div>
               {/* go to resume */}
               <div className='mt-5 flex flex-col sm:flex-row items-center justify-start gap-2 md:gap-8'>
-                <div>
-                  <PixelBtn
-                    onClick={() => soundManager.play('whoosh')}
-                    className="px-5 text-2xl text-white font-light">
-                    <span><FileUser className='w-6 h-6' /></span>
-                    Resume/CV
-                  </PixelBtn>
-                </div>
+                <Link href="/resume">
+                  <div>
+                    <PixelBtn
+                      onClick={() => soundManager.play('whoosh')}
+                      className="px-5 text-2xl text-white font-light">
+                      <span><FileUser className='w-6 h-6' /></span>
+                      Resume/CV
+                    </PixelBtn>
+                  </div>
+                </Link>
                 <div className='flex items-center justify-center'>
                   <span className='text-5xl font-medium'>{`<`}</span>
-                  <ul className="flex gap-2.5 md:gap-4">
+                  <ul className="flex gap-2.5 md:gap-4 mx-2">
                     <ContactList
                       items={[
                         { type: "youtube", label: "YouTube", href: "https://www.youtube.com/@Code_Gully" },
@@ -111,22 +116,31 @@ const page = () => {
                 </div>
               </div>
               {/* project section */}
-              <div className='mt-5 md:mt-30'>
+              <div className='mt-5 md:mt-30 '>
                 <div className='inline-block'>
-                  <h1 
-                   onMouseEnter={() => soundManager.play('hover')}
-                  className='hover:scale-105 text-4xl md:text-5xl font-extralight cursor-pointer opacity-80 hover:opacity-100'>$-Projects</h1>
+                  <h1
+                    onMouseEnter={() => soundManager.play('hover')}
+                    className='hover:scale-105 text-4xl md:text-5xl font-extralight cursor-pointer opacity-80 hover:opacity-100'>$-Projects</h1>
                 </div>
-                <ProjectPage/>
+                <ProjectPage />
               </div>
-              <div className='mt-0 md:mt-10'>
+              <div className='mt-0 md:mt-10 '>
                 <div className='inline-block'>
-                  <h1 
-                   onMouseEnter={() => soundManager.play('hover')}
-                  className='hover:scale-105 text-4xl md:text-5xl font-extralight cursor-pointer opacity-80 hover:opacity-100'>$-About Me</h1>
+                  <h1
+                    onMouseEnter={() => soundManager.play('hover')}
+                    className='hover:scale-105 text-4xl md:text-5xl font-extralight cursor-pointer opacity-80 hover:opacity-100'>$-About Me</h1>
                 </div>
-                <AboutPage/>
+                <AboutPage />
               </div>
+              <div className='mt-0 md:mt-55'>
+                <div className='inline-block'>
+                  <h1
+                    onMouseEnter={() => soundManager.play('hover')}
+                    className='hover:scale-105 text-4xl md:text-5xl font-extralight cursor-pointer opacity-80 hover:opacity-100'>$-Contact</h1>
+                </div>
+                <ContactPage />
+              </div>
+              <Footer/>
             </div>
           </div>
         </div>
