@@ -9,8 +9,8 @@ const ContactPage = () => {
   return (
     <div className='relative flex flex-col items-start justify-center md:justify-start w-full max-w-5xl mt-5 md:mb-35 min-h-screen text-white'>
       <div
-        // onMouseEnter={() => soundManager.playHoverLoop('campfire')}
-        // onMouseLeave={() => soundManager.stopHoverLoop('campfire')}
+        onMouseEnter={() => soundManager.playHoverLoop('campfire')}
+        onMouseLeave={() => soundManager.stopHoverLoop('campfire')}
         className="absolute top-0 aspect-4/3 w-full max-w-5xl mask-x-from-90% mask-x-to-99% mask-y-from-90% mask-y-to-99% group shrink-0 overflow-hidden transition-transform duration-300 ease-out z-0"
       >
         {/* DARK (default) */}
