@@ -18,6 +18,7 @@ export default function TechStackIcon({ url, name }) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
+            title={name}
         >
             <Image
                 preload
